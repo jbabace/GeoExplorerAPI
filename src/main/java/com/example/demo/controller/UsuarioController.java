@@ -74,18 +74,6 @@ public class UsuarioController {
 
 	}
 
-	//MIRAR COMO HACER EL ACTUALIZAR EL USUARIO ENTERO, ESTO COMO EJEMPLO DE IR COLUMNA POR COLUMNA
-	@PutMapping("/updateUsuarioById/{id}/{nombre}/{apellidos}/{avatar}")
-	public void updateUsuarioById(@PathVariable String id, @PathVariable String nombre, @PathVariable String apellidos, @PathVariable String avatar){
-
-		Query query = new Query(Criteria.where("id").is(id));
-		Update update = new Update().set("nombre", nombre);
-		update.set("apellidos", apellidos);
-		update.set("avatar", avatar);
-		mongoTemplate.updateFirst(query, update, Usuarios.class);
-
-	}
-
 	/*DUDAS DE SI ES ASI*/
 	@PutMapping("/updateUsuario/{id}")
 	public void bajarSalario(@PathVariable String id, @RequestBody Usuarios nuevoUsuario) {
