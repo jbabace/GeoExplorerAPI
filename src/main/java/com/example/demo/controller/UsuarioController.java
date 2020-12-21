@@ -86,6 +86,23 @@ public class UsuarioController {
 
 	}
 
+	/*DUDAS DE SI ES ASI*/
+	@PutMapping("/updateUsuario/{id}")
+	public void bajarSalario(@PathVariable String id, @RequestBody Usuarios nuevoUsuario) {
+
+		List<Usuarios> listaUsuarios = usuarioRepository.findAll();
+		for (Usuarios usuario : listaUsuarios) {
+			if(usuario.getId().equals(id)){
+				usuario.setUsuario(nuevoUsuario.getUsuario());
+				usuario.setContraseña(nuevoUsuario.getContraseña());
+				usuario.setNombre(nuevoUsuario.getNombre());
+				usuario.setApellidos(nuevoUsuario.getApellidos());
+				usuario.setAvatar(nuevoUsuario.getAvatar());
+			}
+		}
+		usuarioRepository.saveAll(listaUsuarios);
+	 }
+
 
 	@PutMapping("/conectarUsuario/{id}")
 	public void conectarUsuario(@PathVariable String id){
@@ -118,6 +135,12 @@ public class UsuarioController {
 	@DeleteMapping("/deleteByUsername/{username}")
 	public void deleteByUsername(@PathVariable String username) {
 		usuarioRepository.deleteByUsuario(username);
+	}
+
+	//si te cansas de la vida y quieres borrar todo
+	@DeleteMapping("/deleteAll")
+	public void deleteUsuarios(){
+		usuarioRepository.deleteAll();
 	}
 
 }
