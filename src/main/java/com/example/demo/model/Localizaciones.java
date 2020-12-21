@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,6 +17,7 @@ public class Localizaciones {
 	private String pista;
 	private String imagen_pista;
 	private String ruta_id;
+	private List<String> listaPreguntas;
 
 	public String getId() {
 		return id;
@@ -40,6 +43,10 @@ public class Localizaciones {
 	public String getRuta_id() {
 		return ruta_id;
 	}
+	public List<String> getListaPreguntas() {
+		return listaPreguntas;
+	}
+
 
 	public void setId(String id) {
 		this.id = id;
@@ -64,6 +71,9 @@ public class Localizaciones {
 	}
 	public void setRuta_id(String ruta_id) {
 		this.ruta_id = ruta_id;
+	}
+	public void setListaPreguntas(List<String> listaPreguntas) {
+		this.listaPreguntas = listaPreguntas;
 	}
 
 	public Localizaciones() {
