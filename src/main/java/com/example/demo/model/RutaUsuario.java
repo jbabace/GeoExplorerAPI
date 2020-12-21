@@ -11,6 +11,8 @@ public class RutaUsuario {
 	private String usuario_id;
 	private String ruta_id;
 	private int puntuacion;
+	private boolean activo;
+
 
 	public String getId() {
 		return id;
@@ -24,6 +26,10 @@ public class RutaUsuario {
 	public int getPuntuacion() {
 		return puntuacion;
 	}
+	public boolean isActivo() {
+		return activo;
+	}
+
 
 	public void setId(String id) {
 		this.id = id;
@@ -37,17 +43,23 @@ public class RutaUsuario {
 	public void setPuntuacion(int puntuacion) {
 		this.puntuacion = puntuacion;
 	}
+	public void setActivo(boolean activo) {
+		this.activo = activo;
+	}
+
 
 	public RutaUsuario(){
 
 	}
 
-	public RutaUsuario(String id, String usuario_id, String ruta_id, int puntuacion) {
+
+	public RutaUsuario(String id, String usuario_id, String ruta_id, int puntuacion, boolean activo) {
 		super();
 		this.id = id;
 		this.usuario_id = usuario_id;
 		this.ruta_id = ruta_id;
 		this.puntuacion = puntuacion;
+		this.activo = activo;
 	}
 
 

@@ -8,12 +8,14 @@ public class Usuarios {
 
 	@Id
 	private String id;
-	private String usuario;
+	private String usuario; //NO SE REPITE
 	private String contraseña;
 	private String nombre;
 	private String apellidos;
 	private String rol;
 	private String avatar;
+	private boolean conectado;
+
 
 	public String getId() {
 		return id;
@@ -36,6 +38,10 @@ public class Usuarios {
 	public String getAvatar() {
 		return avatar;
 	}
+	public boolean isConectado() {
+		return conectado;
+	}
+
 
 	public void setId(String id) {
 		this.id = id;
@@ -58,13 +64,16 @@ public class Usuarios {
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
 	}
+	public void setConectado(boolean conectado) {
+		this.conectado = conectado;
+	}
 
 	public Usuarios(){
 
 	}
 
 	public Usuarios(String id, String usuario, String contraseña, String nombre, String apellidos, String rol,
-			String avatar) {
+			String avatar, boolean conectado) {
 		this.id = id;
 		this.usuario = usuario;
 		this.contraseña = contraseña;
@@ -72,8 +81,7 @@ public class Usuarios {
 		this.apellidos = apellidos;
 		this.rol = rol;
 		this.avatar = avatar;
+		this.conectado = conectado;
 	}
-
-
 
 }
