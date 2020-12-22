@@ -55,10 +55,10 @@ public class RutaUsuarioController {
 
 
 	/*Hace falta comprobar que funciona*/
-	@GetMapping("/getAllByRutaId/{id}")
+	/*@GetMapping("/getAllByRutaId/{id}")
 	public List<RutaUsuario> getAllByRutaId(@PathVariable String id) {
-		return rutaUsuarioRepository.findRutaUsuarioByRuta_idAndOrderByPuntuacion(id);
-	}
+		return rutaUsuarioRepository.findRutaUsuarioByRutaIdAndOrderByPuntuacion(id);
+	}*/
 
 	/**************************************************/
 	/******************* MODIFICAR ********************/
@@ -113,12 +113,12 @@ public class RutaUsuarioController {
 
 	@DeleteMapping("/deleteByUsuarioId/{id}")
 	public void deleteByUsuarioId(@PathVariable String id) {
-		rutaUsuarioRepository.deleteByUsuario_id(id);
+		rutaUsuarioRepository.deleteByUsuarioId(id);
 	}
 
 	@DeleteMapping("/deleteByRutaId/{id}")
 	public void deleteByRutaId(@PathVariable String id) {
-		rutaUsuarioRepository.deleteByRuta_id(id);
+		rutaUsuarioRepository.deleteByRutaId(id);
 	}
 
 	//si te cansas de la vida y quieres borrar todo
@@ -126,4 +126,5 @@ public class RutaUsuarioController {
 	public void deleteUsuarios(){
 		rutaUsuarioRepository.deleteAll();
 	}
+
 }

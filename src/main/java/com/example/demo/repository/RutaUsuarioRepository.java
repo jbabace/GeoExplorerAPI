@@ -6,14 +6,14 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.example.demo.model.RutaUsuario;
 
-public interface RutaUsuarioRepository  extends MongoRepository<RutaUsuario, String>{
+public interface RutaUsuarioRepository extends MongoRepository<RutaUsuario, String>{
 
-	void deleteByUsuario_id(String id);
+	void deleteByRutaId(String id);
 
-	void deleteByRuta_id(String id);
+	void deleteByUsuarioId(String id);
 
 	List<RutaUsuario> findRutaUsuarioById(String id);
 
-	List<RutaUsuario> findRutaUsuarioByRuta_idAndOrderByPuntuacion(String id);
+	//List<RutaUsuario> findRutaUsuarioByRutaIdAndOrderByPuntuacion(String id);
 
 }
