@@ -54,24 +54,17 @@ public class RutaUsuarioController {
 	}
 
 
-	/*Hace falta comprobar que funciona*/
-	/*@GetMapping("/getAllByRutaId/{id}")
+	/*Hace falta comprobar que funciona, que esto ayudara al ranking*/
+	@GetMapping("/getAllByRutaId/{id}")
 	public List<RutaUsuario> getAllByRutaId(@PathVariable String id) {
-		return rutaUsuarioRepository.findRutaUsuarioByRutaIdAndOrderByPuntuacion(id);
-	}*/
+		return rutaUsuarioRepository.findRutaUsuarioByRutaIdOrderByPuntuacion(id);
+	}
+
 
 	/**************************************************/
 	/******************* MODIFICAR ********************/
 	/**************************************************/
 
-	@PutMapping("/updateContraseñaById/{id}/{contraseña}")
-	public void updateContraseñaById(@PathVariable String id, @PathVariable String contraseña){
-
-		Query query = new Query(Criteria.where("id").is(id));
-		Update update = new Update().set("contraseña", contraseña);
-		mongoTemplate.updateFirst(query, update, RutaUsuario.class);
-
-	}
 
 	@PutMapping("/updatePuntuacion/{id}/{puntuacion}")
 	public void updatePuntuacion(@PathVariable String id, @PathVariable int puntuacion) {
