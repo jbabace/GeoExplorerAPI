@@ -9,7 +9,7 @@ public class Usuarios {
 	@Id
 	private String id;
 	private String usuario; //NO SE REPITE
-	private String contraseña;
+	private String contrasena;
 	private String nombre;
 	private String apellidos;
 	private String rol;
@@ -23,8 +23,8 @@ public class Usuarios {
 	public String getUsuario() {
 		return usuario;
 	}
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasena() {
+		return contrasena;
 	}
 	public String getNombre() {
 		return nombre;
@@ -49,8 +49,8 @@ public class Usuarios {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -72,11 +72,11 @@ public class Usuarios {
 
 	}
 
-	public Usuarios(String id, String usuario, String contraseña, String nombre, String apellidos, String rol,
+	public Usuarios(String id, String usuario, String contrasena, String nombre, String apellidos, String rol,
 			String avatar, boolean conectado) {
 		this.id = id;
 		this.usuario = usuario;
-		this.contraseña = contraseña;
+		this.contrasena = contrasena;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.rol = rol;

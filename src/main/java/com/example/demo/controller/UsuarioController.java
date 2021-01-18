@@ -82,7 +82,7 @@ public class UsuarioController {
 		for (Usuarios usuario : listaUsuarios) {
 			if(usuario.getId().equals(id)){
 				usuario.setUsuario(nuevoUsuario.getUsuario());
-				usuario.setContraseña(nuevoUsuario.getContraseña());
+				usuario.setContrasena(nuevoUsuario.getContrasena());
 				usuario.setNombre(nuevoUsuario.getNombre());
 				usuario.setApellidos(nuevoUsuario.getApellidos());
 				usuario.setAvatar(nuevoUsuario.getAvatar());
